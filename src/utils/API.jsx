@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const defaultOptions = {
-    baseURL: "http://142.93.229.148",
+    baseURL: "https://jsonplaceholder.typicode.com",
     headers: {
         'Content-Type': 'application/json',
     },

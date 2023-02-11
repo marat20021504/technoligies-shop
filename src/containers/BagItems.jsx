@@ -22,7 +22,7 @@ const BagItem = () => {
                         return (
                             <div className="Bag-Item">
                                 <div className="Image">
-                                    <img src={`http://142.93.229.148/`+ bagElements.image} alt={bagElements.title} />
+                                    <img src={bagElements.url} alt={bagElements.title} />
                                 </div>
             
                                 <div className="product-info">

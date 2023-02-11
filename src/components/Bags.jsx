@@ -8,7 +8,7 @@ const Bags = ({elements}) => {
       	<b className="title">Bag</b>
         {
           elements?.map((item , index)=> <BagItem key={index} >
-            <img src={`http://142.93.229.148/` + item.image} alt="" />
+            <img src={item.url} alt="" />
           </BagItem>)
         }
 

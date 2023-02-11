@@ -14,7 +14,7 @@ const ProductsDetails = () => {
   
 
     useEffect(() => {
-        API.get(`/products/${id}`)
+        API.get(`/photos/${id}`)
             .then(res => setData(res.data))
     },[id])
 
@@ -34,12 +34,12 @@ const ProductsDetails = () => {
                     <div className="main">
 
                         <div className="images" >
-                            <img src={"http://142.93.229.148/" + data.image } alt="" />
-                            <img src={"http://142.93.229.148/" + data.image } alt="" />
-                            <img src={"http://142.93.229.148/" + data.image } alt="" />
+                            <img src={data.url } alt="" />
+                            <img src={data.url } alt="" />
+                            <img src={data.url } alt="" />
                         </div>
                         
-                        <img className='bigImage' src={"http://142.93.229.148/" + data.image } alt={data.title} />          
+                        <img className='bigImage' src={data.url } alt={data.title} />          
                         
                         <div className="content">
 

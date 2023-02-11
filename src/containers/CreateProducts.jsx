@@ -26,12 +26,12 @@ const CreateProducts = () => {
         form.append("description", description)
         form.append("image", file)
 
-        API.post("/product", form)
+        API.post("/post", form)
             .then(res => {
                 navigate("/")
             })
+            console.log(form);
     }
-
     return (
         <Wrapper>
 

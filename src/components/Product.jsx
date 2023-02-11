@@ -4,13 +4,13 @@ import BagIcon from "../assets/Button.svg"
 
 export const Product = ({data, addBag}) => {
     const bagElements = JSON.parse(localStorage.getItem("bags"))?.map(({id}) => id)
-
+    console.log(data);
     return (
         <Wrapper type={data.type}> 
 
             <Link to={`product/${data.id}`}>
                 <div className="Product-image">
-                    <img src={`http://142.93.229.148/`+ data.image} alt={data.title} />
+                    <img src={data.url} alt={data.title} />
                 </div>            
             </Link>
 
