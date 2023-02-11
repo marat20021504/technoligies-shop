@@ -8,7 +8,7 @@ export default function Admin() {
     const formSubmit = (e) => {
         e.preventDefault()
         
-        API.post("/login", {
+        API.post("/api/login", {
             username: e.target[0].value,
             password: e.target[1].value
         })

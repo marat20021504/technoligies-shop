@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const Bags = ({elements}) => {
+	console.log(elements);
   return (
     <BagContainer>
 
       	<b className="title">Bag</b>
         {
           elements?.map((item , index)=> <BagItem key={index} >
-            <img src={item.url} alt="" />
+			<Link to={`/products/${item.id}`}>
+            	<img src={item?.image} alt="" />
+			</Link>
           </BagItem>)
         }
 
@@ -54,7 +58,7 @@ export const BagContainer = styled.div`
 const BagItem = styled.div`
 	background: #FFFFFF;
 	border-radius: 12px;
-	padding: 5px;
+	padding: 15px;
 
 	display: flex;
 	align-items: center;

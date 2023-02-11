@@ -26,8 +26,9 @@ const CreateProducts = () => {
         form.append("description", description)
         form.append("image", file)
 
-        API.post("/post", form)
+        API.post("/posts", form)
             .then(res => {
+                console.log(res.data);
                 navigate("/")
             })
             console.log(form);

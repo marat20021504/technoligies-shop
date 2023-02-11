@@ -22,7 +22,7 @@ const BagItem = () => {
                         return (
                             <div className="Bag-Item">
                                 <div className="Image">
-                                    <img src={bagElements.url} alt={bagElements.title} />
+                                    <img src={bagElements.image} alt={bagElements.title} />
                                 </div>
             
                                 <div className="product-info">
@@ -31,7 +31,7 @@ const BagItem = () => {
                                     <p>{bagElements.description}</p>
                                 
                                     <div className="Price-quantity">
-                                        <h3>{bagElements.price} x {quantity}</h3>
+                                        <h3>{bagElements.price}$ x {quantity} = {bagElements.price * quantity} $</h3>
             
                                         <div className="quantity">
                                             <img onClick={() => setQuantity(quantity - 1)} style={{display: quantity <= 1 ? "none" : "inline-block"}} src={minus} alt="minus-icon" />
@@ -89,7 +89,7 @@ const Containers = styled.div`
         display: flex;
         gap: 30px;
         width: 100%;
-        height: 288px;
+        height: auto;
         padding: 20px;
         background-color: white;
         box-shadow: 0px 4px 16px rgb(26 31 22 / 15%);
@@ -113,7 +113,7 @@ const Containers = styled.div`
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;    
+                object-fit: contain;    
             }
         }
 

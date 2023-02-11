@@ -15,7 +15,7 @@ function App() {
 		<Routes>
 			<Route path="/login" element={<LoginRedirect><Admin /></LoginRedirect>} />
 			<Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
-			<Route path="/product/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
+			<Route path="/products/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
 			<Route path="/products/create" element={<PrivateRoute><CreateProducts /></PrivateRoute>} />
 			<Route path="/bag-item" element={<PrivateRoute><BagItems /></PrivateRoute>} />
 		</Routes>

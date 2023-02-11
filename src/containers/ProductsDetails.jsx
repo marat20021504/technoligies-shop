@@ -14,7 +14,7 @@ const ProductsDetails = () => {
   
 
     useEffect(() => {
-        API.get(`/photos/${id}`)
+        API.get(`/products/${id}`)
             .then(res => setData(res.data))
     },[id])
 
@@ -34,20 +34,21 @@ const ProductsDetails = () => {
                     <div className="main">
 
                         <div className="images" >
-                            <img src={data.url } alt="" />
-                            <img src={data.url } alt="" />
-                            <img src={data.url } alt="" />
+                            <img src={data.image } alt="" />
+                            <img src={data.image } alt="" />
+                            <img src={data.image } alt="" />
                         </div>
                         
-                        <img className='bigImage' src={data.url } alt={data.title} />          
+                        <img className='bigImage' src={data.image } alt={data.title} />          
                         
                         <div className="content">
 
                             <b>{data.title}</b>
-                            <p className='model'>{data.model}</p>
+                            <p className='model'>Count: {data?.rating?.count}</p>
+                            <p className='model'>Rate: {data?.rating?.rate}</p>
 
-                            <p className='price'>{data.price}</p>
-                            <p className='description'>{data.description}</p>
+                            <p className='price'>Price: {data.price} $</p>
+                            <p className='description'>Description: {data.description}</p>
 
                         </div>
 

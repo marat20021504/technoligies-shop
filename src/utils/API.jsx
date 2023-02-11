@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const defaultOptions = {
-    baseURL: "https://jsonplaceholder.typicode.com",
+    baseURL: "https://fakestoreapi.com",
     headers: {
         'Content-Type': 'application/json',
     },

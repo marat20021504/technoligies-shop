@@ -4,13 +4,13 @@ import BagIcon from "../assets/Button.svg"
 
 export const Product = ({data, addBag}) => {
     const bagElements = JSON.parse(localStorage.getItem("bags"))?.map(({id}) => id)
-    console.log(data);
+    console.log(data.id);
     return (
-        <Wrapper type={data.type}> 
+        <Wrapper category={data.category}> 
 
-            <Link to={`product/${data.id}`}>
+            <Link to={`/products/${data.id}`}>
                 <div className="Product-image">
-                    <img src={data.url} alt={data.title} />
+                    <img src={data.image} alt={data.title} />
                 </div>            
             </Link>
 
@@ -20,7 +20,7 @@ export const Product = ({data, addBag}) => {
                 <p className="info-model">{data.model}</p>
 
                 <div className="action">
-                    <p className="info-price">{data.price}</p>
+                    <p className="info-price">Price: {data.price} $</p>
                     <img 
                         src={BagIcon} 
                         onClick = {() => addBag(data)}  
@@ -36,13 +36,13 @@ export const Product = ({data, addBag}) => {
 
 const Wrapper = styled.div`
 
-    grid-column: ${({type}) => 
-        type === "laptop" ? "span 2" : "span 1" 
+    grid-column: ${({category}) => 
+        category === "electronics" ? "span 2" : "span 1" && category === "jewelery" ? "span 2" : "span 1" 
     };
 
     @media (max-width: 600px) {
-        grid-column: ${({type}) => 
-            type === "laptop" ? "span 1" : "span 0" 
+        grid-column: ${({category}) => 
+            category === "electronics" ? "span 1" : "span 0" && category === "jewelery" ? "span 1" : "span 0" 
         };
     }
 
@@ -55,15 +55,15 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         border-radius: 22px;
-        padding: inherit;
+        padding: 10px;
         
         img {
             height: 100%;
             
             @media (max-width: 600px) {
                object-fit: contain;
-                width: ${({type}) => 
-                    type === "laptop" ? "100%" : "span 1" 
+                width: ${({category}) => 
+                    category === "electronics" ? "100%" : "span 1" && category === "jewelery" ? "100%" : "span 1"  
                 };
            }
 
@@ -74,6 +74,8 @@ const Wrapper = styled.div`
         padding: 8px;
 
         .info-title {
+            width: 100%;
+            height: 100px;
             font-weight: 500;
             font-size: 20px;
             line-height: 24px;

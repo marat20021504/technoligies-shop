@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import {ReactComponent as HomeIcon}  from "../assets/home.svg"
 import {ReactComponent as BagIcon}  from "../assets/bag.svg"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import {ReactComponent as LoginIcon} from "../assets/Vector.svg"
 import { useState } from "react"
 
@@ -34,7 +34,9 @@ const Sidebar = ({elements}) => {
             <div className={click ? "nav-menu active-menu" : "nav-menu"}>
                 {
                     elements?.map((item , index)=> <BagItems key={index} >
-                        <img className="bags-image" src={item.url} alt="" />
+                        <Link to={`/products/${item.id}`}>
+                            <img className="bags-image" src={item.image} alt="" />
+                        </Link>
                     </BagItems>)
                 }
             </div>

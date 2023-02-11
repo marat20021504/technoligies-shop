@@ -12,7 +12,7 @@ export const Home = () => {
 
 
     useEffect(() => {
-        API.get("/photos")
+        API.get("/products")
             .then(res => {
                 setProducts(res.data)
             })
