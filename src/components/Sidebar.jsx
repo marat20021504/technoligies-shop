@@ -34,9 +34,7 @@ const Sidebar = ({elements}) => {
             <div className={click ? "nav-menu active-menu" : "nav-menu"}>
                 {
                     elements?.map((item , index)=> <BagItems key={index} >
-                        <Link to={`/products/${item.id}`}>
-                            <img className="bags-image" src={item.image} alt="" />
-                        </Link>
+                        <img className="bags-image" src={item.image} alt="" />
                     </BagItems>)
                 }
             </div>

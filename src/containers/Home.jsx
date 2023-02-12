@@ -4,14 +4,18 @@ import Sidebar from '../components/Sidebar'
 import Products from '../containers/Products'
 import Bags from '../components/Bags'
 import API from "../utils/API.jsx"
-
+import LoadingSpinner from "../components/Loading"
 
 export const Home = () => {
     const [products, setProducts] = useState([])
     const [bag, setBag] = useState(JSON.parse(localStorage.getItem("bags")) || [])
-
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
+        setInterval(() => {
+            setLoading(false)
+        }, 5000)
         API.get("/products")
             .then(res => {
                 setProducts(res.data)
@@ -28,7 +32,10 @@ export const Home = () => {
 
             <Sidebar elements={bag} />
             
-            <Products elements = {products} addBag ={addBag} />
+            {
+                loading ? <LoadingSpinner /> :
+                <Products loading={loading} elements = {products} addBag ={addBag} />
+            }
 
             <Bags elements={bag} />
 

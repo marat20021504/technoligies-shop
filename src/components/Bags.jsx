@@ -10,9 +10,7 @@ const Bags = ({elements}) => {
       	<b className="title">Bag</b>
         {
           elements?.map((item , index)=> <BagItem key={index} >
-			<Link to={`/products/${item.id}`}>
             	<img src={item?.image} alt="" />
-			</Link>
           </BagItem>)
         }
 

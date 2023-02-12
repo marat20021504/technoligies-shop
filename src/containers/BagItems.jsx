@@ -4,11 +4,12 @@ import Sidebar from "../components/Sidebar"
 import minus from "../assets/minus.svg"
 import plus from "../assets/plus.svg"
 import { useState } from "react"
+import LoadingSpinner from "../components/Loading"
 
 const BagItem = () => {
     const bagElements = JSON.parse(localStorage.getItem("bags"))
     const [quantity,  setQuantity] = useState(1)
-
+    const [loading, setLoading] = useState(false)
     return (
         <Wrapper>
 
